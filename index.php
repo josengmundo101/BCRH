@@ -83,7 +83,7 @@
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 300px; margin: auto;">
                     <img src="Images/rooms/alroom1.1.jpg" class="card-img-top" alt="...">
-                    <div class="custom-card-body">
+                    <div class="card-body">
                         <h5>Almont's room</h5>
                         <h6 class="mb-4">₱200 per night</h6>
                         <div class="features mb-4">
@@ -145,7 +145,7 @@
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 300px; margin: auto;">
                     <img src="Images/rooms/graroom2.jpg" class="card-img-top" alt="...">
-                    <div class="custom-card-body">
+                    <div class="card-body">
                       <h5>Grand Palace's room</h5>
                       <h6 class="mb-4">₱200 per night</h6>
                       <div class="features mb-4">
@@ -207,7 +207,7 @@
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 300px; margin: auto;">
                     <img src="Images/rooms/waroom3.jpg" class="card-img-top" alt="...">
-                    <div class="custom-card-body">
+                    <div class="card-body">
                       <h5>Watergate's room</h5>
                       <h6 class="mb-4">₱200 per night</h6>
                       <div class="features mb-4">
