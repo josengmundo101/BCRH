@@ -104,26 +104,32 @@
             
             xhr.send('get_general');
         }
+        
+        function upd_general(site_title_val, site_about_val){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST","ajax/settings_crud.php",true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-        // function upd_general(site_title_val,site_about_val){
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST","ajax/settings_crud.php",true);
-        //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = function(){
 
-        //     xhr.onload = function(){
-        //     console.log(this.responseText);
-            
-        //     //    general_data = JSON.parse(this.responseText);
+                var myModal = document.getElementById('general-s');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
 
-        //     //    site_title.innerText = general_data.site_title;
-        //     //    site_about.innerText = general_data.site_about;
+               if(this.responseText == 1){
+                    alert('success','Chaanges saved!');
+                    get_general();
+               }else {
+                alert('error','No Chaanges saved!');
+               }
 
-        //     //    site_title_inp.value = general_data.site_title;
-        //     //    site_about_inp.value = general_data.site_about;
-        //     }
-            
-        //     xhr.send('site_title='+site_title_val+'site_about='+site_about_val+'&upd_general');
-        // }
+
+
+
+            }
+            xhr.send('site_title='+ site_title_val + '&site_about='+ site_about_val + '&upd_general');
+        }
+        
 
 
         window.onload = function(){

@@ -13,12 +13,13 @@
         echo $json_data;
     }
 
-    // if(isset($_POST['upd_general'])){
-    //     $frm_data = filteration($_POST);
+   if(isset($_POST['upd_general'])){
+        $frm_data = filteration($_POST);
 
-    //     $q = "UPDATE `settings` SET `site_title`=?, `site_about`=? WHERE `sr_no`=?";
-    //     $values = [$frm_data['site_title'],$frm_data['site_about'],1];
-    //     $res = update($q,$values,'ssi');
-    //     echo $res;
-    // }
+        $q = "UPDATE `settings` SET `site_title`=?, `site_about`=? WHERE `sr_no`=?";
+        $values = [$frm_data['site_title'], $frm_data['site_about'],1];
+        $res = update($q,$values,'ssi');
+        echo $res;
+
+   }
 ?>
