@@ -1,6 +1,6 @@
 <?php
     require('inc/essentials.php');
-    adminLogin();
+
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="inc/style.css">
-    <?php require('inc1/links.php'); ?>
 
-    
+    <?php require('inc/links.php'); ?>
+
+    <style>
+        .custom-alert {
+            position: fixed;
+            top: 80px;
+            right: 25px;
+        }
+    </style>
 
 
 </head>
@@ -44,30 +50,30 @@
 
                 <!-- General settings modal -->
                 <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <form>
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">General Settings</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label class="form-label">Site Title</label>
-                                        <input type="name" name="site_title" id="site_title_inp" class="form-control shadow-none">
+                            <div class="modal-dialog">
+                                <form>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">General Settings</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label class="form-label">Site Title</label>
+                                                <input type="name" name="site_title" id="site_title_inp" class="form-control shadow-none">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">About us</label>
+                                                <textarea name="site_about" id="site_about_inp" class="form-control" rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
+                                            <button type="button" onclick="upd_general(site_title.value,site_about.value)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">About us</label>
-                                        <textarea name="site_about" id="site_about_inp" class="form-control" rows="6"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                    <button type="button" onclick="upd_general(site_title.value,site_about.value)" class="btn custom-bg text-white shadow-none">SUBMIT</button>
-                                </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                </div>
+                        </div>
 
                 <!-- Shutdown section -->
                 <div class="card border-0 shadow-sm">
@@ -86,17 +92,12 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-
-
-    <?php require('inc1/script.php');  ?>
+    <?php require('inc/script.php');  ?>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
-    
     <script>
+
         let general_data;
 
         function get_general(){
@@ -109,9 +110,10 @@
             let shutdown_toggle = document.getElementById('shutdown-toggle');
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST","ajax/settings_crud.php",true);
+            xhr.open("POST","ajax/settings_crud.php", true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+            
             xhr.onload = function(){
                general_data = JSON.parse(this.responseText);
 
@@ -121,18 +123,21 @@
                site_title_inp.value = general_data.site_title;
                site_about_inp.value = general_data.site_about;
 
+               
                if(general_data.shutdown == 0){
-                shutdown_toggle.checked = false;
-                shutdown_toggle.value = 0;
+                    shutdown_toggle.checked = false;
+                    shutdown_toggle.value = 0;
                }else{
-                shutdown_toggle.checked = true;
-                shutdown_toggle.value = 1;
+                    shutdown_toggle.checked = true;
+                    shutdown_toggle.value = 1;
                }
             }
-            
+
+
+
             xhr.send('get_general');
         }
-        
+
         function upd_general(site_title_val, site_about_val){
             let xhr = new XMLHttpRequest();
             xhr.open("POST","ajax/settings_crud.php",true);
@@ -157,7 +162,7 @@
             }
             xhr.send('site_title='+ site_title_val + '&site_about='+ site_about_val + '&upd_general');
         }
-        
+
         function upd_shutdown(val){
             let xhr = new XMLHttpRequest();
             xhr.open("POST","ajax/settings_crud.php",true);
@@ -174,7 +179,7 @@
             }
 
 
-            xhr.send('upd_shutdown' +val);
+            xhr.send('upd_shutdown=' +val);
         }
 
 
