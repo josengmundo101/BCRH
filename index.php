@@ -18,7 +18,7 @@
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="/Images/carousel/1.jpg" class="custom-img w-100 d-block">
+                    <img src="Images/carousel/1.jpg" class="custom-img w-100 d-block">
                 </div>
                 <div class="swiper-slide">
                     <img src="Images/carousel/2.jpg" class="custom-img w-100 d-block">
