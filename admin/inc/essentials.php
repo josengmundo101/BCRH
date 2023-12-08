@@ -7,8 +7,8 @@
             <script>
                 //window.location.href='index.php';
             </script>";
+            exit;
         }
-        session_regenerate_id(true);
     }
 
 
@@ -17,6 +17,7 @@
             <script>
                 window.location.href='$url';
             </script>";
+        exit;
     }
 
     function alert($type,$msg){
