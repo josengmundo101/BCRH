@@ -34,7 +34,7 @@
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-                <img src="images/about.png" class="w-100">
+                <img src="images/about/about.png" class="w-100">
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@
         <div class="swiper mySwiper ">
             <div class="swiper-wrapper mb-5">
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/team/jolo.jpg" class="w-100">
+                    <img src="images/team/jologs.jpeg" class="w-100">
                     <h5 class="mt-2">Joseph Lucilo E. Quinte</h5>
                 </div>
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
