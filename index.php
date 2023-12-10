@@ -17,23 +17,20 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="Images/carousel/1.jpg" class="custom-img w-100 d-block">
-                </div>
-                <div class="swiper-slide">
-                    <img src="Images/carousel/2.jpg" class="custom-img w-100 d-block">
-                </div>
-                <div class="swiper-slide">
-                    <img src="Images/carousel/3.jpg" class="custom-img w-100 d-block">
-                </div>
-                <div class="swiper-slide">
-                    <img src="Images/carousel/4.jpg" class="custom-img w-100 d-block">
-                </div>
+                <?php 
+                    $res = selectAll('carousel');
+                    while($row = mysqli_fetch_assoc($res)){
+                        $path = CAROUSEL_IMG_PATH;
+                        echo <<<data
+                            <div class="swiper-slide">
+                                <img src="$path$row[image]" class="custom-img w-100 d-block">
+                            </div>
+                        data;
+                    }                    
+                ?>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        
     </div>
 
     <!--Check Availability form-->

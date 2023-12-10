@@ -3,11 +3,13 @@
     //frontend purpose data
     define('SITE_URL','http://127.0.0.1/bcrh/');
     define('TEAM_IMG_PATH',SITE_URL.'images/team/');
+    define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
 
 
     //backend upload process needs this data
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/BCRH/images/');
     define('TEAM_FOLDER','team/');
+    define('CAROUSEL_FOLDER','carousel/');
 
 
     function adminLogin(){
