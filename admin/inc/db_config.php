@@ -13,10 +13,11 @@
 
     function filteration($data){
         foreach($data as $key => $values){
-            $data[$key] = trim($values);
-            $data[$key] = stripcslashes($values);
-            $data[$key] = htmlspecialchars($values);
-            $data[$key] = strip_tags($values);
+            $values = trim($values);
+            $values = stripcslashes($values);
+            $values = htmlspecialchars($values);
+            $values = strip_tags($values);
+            $data[$key] = $values;
         }
         return $data;
     }

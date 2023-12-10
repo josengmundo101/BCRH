@@ -22,38 +22,52 @@
         </p>
     </div>
 
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <iframe  class="w-100 rounded mb-4" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.147159459913!2d125.5957578!3d8.9585847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301eac565a4abe5%3A0x87859279e2e3f66a!2sCaraga%20State%20University!5e0!3m2!1sen!2sph!4v1701009406822!5m2!1sen!2sph" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe  class="w-100 rounded mb-4" height="320px" src="<?php echo $contact_r['iframe']?>"></iframe>
                     <h5>Address</h5>
-                    <a href="https://maps.app.goo.gl/8HPNzkB9WrD2Cn3J8" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
-                    <i class="bi bi-geo-alt-fill"></i>Ampayon, Butuan City, Agusan Del Norte
+                    <a href="<?php echo $contact_r['gmap']?>" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
+                    <i class="bi bi-geo-alt-fill"></i><?php echo $contact_r['address']?>
                     </a>
 
                     <h5 class="mt-4">Call us:</h5>
-                    <a href="tel: +639092838350" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +639092838350
+                    <a href="tel: +<?php echo $contact_r['iframe']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1']?>
                     </a>
                     <br>
-                    <a href="tel: +639099288025" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +639099288025
-                    </a>
+                    <?php
+                        if($contact_r['pn2']!=''){
+                            echo<<<data
+                                <a href="tel: +$contact_r[pn2]" class="d-inline-block mb-2 text-decoration-none text-dark">
+                                    <i class="bi bi-telephone-fill"></i> +$contact_r[pn2]
+                                </a>
+                            data;
+                        }
+                    ?>
 
                     <h5 class="mt-4">Email</h5>
-                    <a href="mailto: josengmundosince2001@gmail.com" class="d-inline-block text-decoration-none text-dark">
-                    <i class="bi bi-envelope-fill"></i> josengmundosince2001@gmail.com
+                    <a href="mailto: <?php echo $contact_r['email']?>" class="d-inline-block text-decoration-none text-dark">
+                    <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email']?>
                     </a>
 
                     <h5 class="mt-4">Follow us:</h5>
-                    <a href="#" class="d-inline-block  text-dark fs-5 me-2">
-                        <i class="bi bi-twitter me-1"></i> 
-                    </a> 
-                    <a href="#" class="d-inline-block  text-dark fs-5 me-2">
+                    <?php
+                        if($contact_r['tw']!=''){
+                            echo<<<data
+                                <a href="$contact_r[tw]" class="d-inline-block  text-dark fs-5 me-2">
+                                    <i class="bi bi-twitter me-1"></i> 
+                                </a> 
+                            data;
+                        }
+                    ?>
+
+                    <a href="<?php echo $contact_r['insta']?>" class="d-inline-block  text-dark fs-5 me-2">
                         <i class="bi bi-instagram me-1"></i>
                     </a>
-                    <a href="#" class="d-inline-block  text-dark fs-5">
+                    <a href="<?php echo $contact_r['fb']?>" class="d-inline-block  text-dark fs-5">
                         <i class="bi bi-facebook me-1"></i>
                     </a>
                      </div>

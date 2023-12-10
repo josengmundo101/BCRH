@@ -11,7 +11,7 @@
     <title>Admin Panel - Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
-    <?php require('inc/links.php') ?>
+    <?php require(__DIR__ . '/../inc/links.php');?>
 
     
 

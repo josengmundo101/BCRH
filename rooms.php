@@ -119,6 +119,7 @@
                             </div>
         
                         </div>
+                        
 
                         <div class="col-md-2 text-align-center">
                             <h6 class="mb-4">₱200 per night</h6>

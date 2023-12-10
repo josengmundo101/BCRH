@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 
-    <?php require('inc/links.php'); ?>
+    <?php require(__DIR__ . '/../inc/links.php');?>
 
     <style>
         .custom-alert {
@@ -134,7 +134,7 @@
                                 <div class="mb-4">
                                     <h6 class="card-subtitle mb-1 fw-bold">Social Link</h6>
                                     <p class="card-text mb-1">
-                                    <i class="bi bi-twitter me-1"></i> 
+                                    <i class="bi bi-facebook me-1"></i> 
                                         <span id="fb"></span>
                                     </p>
                                     <p class="card-text mb-1">
@@ -142,7 +142,7 @@
                                         <span id="insta"></span>
                                     </p>
                                     <p class="card-text">
-                                        <i class="bi bi-facebook me-1"></i>
+                                        <i class="bi bi-twitter me-1"></i>
                                         <span id="tw"></span>
                                     </p>
                                 </div>
@@ -179,11 +179,11 @@
                                                     <label class="form-label fw-bold">Phone Number (with country code)</label>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                        <input type="text" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
+                                                        <input type="number" name="pn1" id="pn1_inp" class="form-control shadow-none" required>
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                                        <input type="text" name="pn2" id="pn2_inp" class="form-control shadow-none" required>
+                                                        <input type="number" name="pn2" id="pn2_inp" class="form-control shadow-none" required>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">

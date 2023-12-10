@@ -1,3 +1,4 @@
+<?php require(__DIR__ . '/../inc/links.php');?>
 
 
 <div class="container-fluid bg-dark p-3 d-flex align-items-center justify-content-between sticky-top">
@@ -18,10 +19,10 @@
                             <a class="nav-link text-white" href="dashboard.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Rooms</a>
+                            <a class="nav-link text-white" href="rooms.php">Rooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Users</a>
+                            <a class="nav-link text-white" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="settings.php">Settings</a>
@@ -31,3 +32,5 @@
             </div>
         </nav>
     </div>
+
+    <?php require('inc/script.php');?>
