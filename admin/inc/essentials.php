@@ -5,6 +5,7 @@
     define('TEAM_IMG_PATH',SITE_URL.'images/team/');
     define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
     define('FACILITIES_IMG_PATH',SITE_URL.'images/features/');
+    define('ROOMS_IMG_PATH',SITE_URL.'images/rooms/');
 
 
     //backend upload process needs this data
@@ -12,7 +13,7 @@
     define('TEAM_FOLDER','team/');
     define('CAROUSEL_FOLDER','carousel/');
     define('FACILITIES_FOLDER','features/');
-
+    define('ROOMS_FOLDER','rooms/');
 
     function adminLogin(){
         session_start();
