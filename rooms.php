@@ -123,7 +123,7 @@
                         <div class="card mb-4 border-0 shadow">
                             <div class="row g-0 p-3 align-items-center">
                                 <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                                <img src="images/rooms/alroom1.1.jpg" class="img-fluid rounded" >
+                                <img src="$room_thumb" class="img-fluid rounded" >
                                 </div>
                                 <div class="col-md-5 px-lg-3 px-md-3 px-0">
                                     <h5 class="mb-3">$room_data[name]</h5>
@@ -149,9 +149,9 @@
                                 
 
                                 <div class="col-md-2 text-align-center">
-                                    <h6 class="mb-4">₱200 per night</h6>
-                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
-                                    <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
+                                    <h6 class="mb-4">₱$room_data[price]</h6>
+                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-1">Book Now</a>
+                                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
                                 </div>
                             </div>
                         </div>
